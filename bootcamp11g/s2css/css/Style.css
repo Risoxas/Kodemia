@@ -1,0 +1,23 @@
+﻿*{
+    background-color: rgb(1, 17, 26);
+}
+.lista-1 li{
+    background-color: bisque;
+}
+
+#lista-2 li{
+    background-color: cadetblue;
+}
+
+h1{
+    background-color: oldlace;
+}
+
+.lista-1 li :not(ul){
+    text-transform: uppercase;
+    background-color: gray;
+}
+
+.lista-2 .active + li{
+    background-color: orange;
+}
