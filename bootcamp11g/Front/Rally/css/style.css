@@ -1,0 +1,25 @@
+.cuadrado{
+    background-image: linear-gradient(to right, green,red);
+    width: 10vw;
+    height: 10vw;
+}
+
+.rectangulo{
+    background: url(https://picsum.photos/200/300?grayscale) center/cover no-repeat content-box;
+    width: 25vw;
+    height: 12.5vw;
+}
+
+.circulo{
+    background-color: teal;
+    width: 500px;
+    height: 500px;
+}
+.circulo div{
+    align-content: center;
+    position: relative;
+    background-color: thistle;
+    border-radius: 50%;
+    width: 120%;
+    height: 120%;
+}
