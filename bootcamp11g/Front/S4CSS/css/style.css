@@ -1,0 +1,29 @@
+.flex-cont{
+    background-image: linear-gradient(to right, slategray 0%, teal 25%);
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    color: crimson;
+    background-color: slategray;
+    display: flex; 
+    height: 10vh;  
+    border: 1px solid peru;
+
+}
+ul li{
+    list-style: none;
+    padding: 0 1rem;
+    -ms-flex-order: 1;
+    
+}
+nav{
+    justify-content: space-between;
+}
+
+button{
+    height: min-content;
+    background-image: linear-gradient();
+
+}

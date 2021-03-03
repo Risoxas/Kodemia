@@ -1,0 +1,120 @@
+/************ Generales *******************************/
+
+*{
+    box-sizing: border-box;
+}
+.layout-wrapper{
+    width:95vw;
+    height:50vh;
+    border: 2px solid #333;
+    margin-bottom:1rem;
+    margin-left: auto;
+    margin-right:auto;
+}
+.squareCont{
+    height: 50vh;
+    width: 100vw;
+    border: solid 1px red;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.square{
+    width: 50px;
+    height: 50px;
+}
+.dispFlex{
+    display: flex;
+}
+.dimension{
+    width: 50px;
+}
+.separar{
+    margin-right: 1rem;
+}
+.directionColumn{
+    flex-direction: column;
+}
+.justifyCenter{
+    justify-content: center;
+}
+.alignItems{
+    align-items: center;
+}
+.justifyEnd{
+    justify-content: flex-end;
+}
+.fullWidth{
+    width: 100%;
+}
+.item{
+    width: 50px;
+}
+.justifyBetween{
+    justify-content: space-between;
+}
+.justifyAround{
+    justify-content: space-around;
+}
+.justifyEvenly{
+    justify-content: space-evenly;
+}
+
+/*********************** Contenedores especificos *********************/
+.centrado{
+    justify-content: center;
+    align-items: center;
+
+}
+.esquinado-top{
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.esquinado-bot{
+    flex-direction: column;
+    justify-content: space-between;
+}
+.EndBot{
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.rectangle{
+    width: 70vw;
+    height: 50px;
+}
+ .rectangleBig{
+     width: 48%;
+     height: 33ch;
+ }
+ .w-90{
+     width: 90%;
+ }
+ .separarV{
+     margin-bottom: 1rem;
+ }
+ .rectfoot{
+     width: 90%;
+     height: 10ch;
+ }
+ .altura{
+    height: 90%;
+ }
+/*********************** colores **********************************/
+.ming{
+    background-color: #16697a;
+}
+.PacificBlue{
+    background-color: #489FB5;
+}
+.MiddleBlue{
+    background: #82C0cc;
+}
+.PaleSilver{
+    background: #DDCECD;
+}
+.BananaMania{
+    background-color: #F2DDA4;
+}
+.Flax{
+    background: #E3D985;
+}

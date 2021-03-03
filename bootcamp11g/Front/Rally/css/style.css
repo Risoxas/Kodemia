@@ -22,4 +22,11 @@
     border-radius: 50%;
     width: 120%;
     height: 120%;
+    background-color: linen;
+
+}
+
+p:active:{
+    border: collapse ;
+    text-transform:   ;
 }
