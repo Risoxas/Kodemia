@@ -1,0 +1,117 @@
+$base-measure: 1rem;
+$custom-gradient: linear-gradient(45deg,plum , white);
+$custom-gradient-reversed: linear-gradient(315deg,plum,white);
+$light-blue:  hsl(234, 14%, 74%);
+
+*{
+    box-shadow: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+body{
+    background-color: $light-blue 
+}
+.card-wrapper{
+    width: calc(100% - #{$base-measure*2});
+    margin: 0 auto;
+}
+.card{
+    background-color: white;
+    border-radius: $base-measure;
+    padding: $base-measure*2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #acacac;
+    box-shadow: 3px 3px 5px #ccc;
+    transform: scale(1);
+    transition: all .5s ease;
+    .name,.price{
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .price{
+        font-size: $base-measure * 3;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        span{
+            font-size: $base-measure*1.5;
+        }
+    }    
+    ul{
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        margin-bottom: $base-measure*1.5;
+        li{
+            padding: $base-measure;
+            text-align: center;
+            border-bottom: 1px solid lightblue;
+        &:first-of-type{
+            border-top: 1px solid lightblue;
+        }
+        }
+    }
+    .btn{
+        padding: 1rem;
+        width: 100%;
+        border: none;
+        border-radius: $base-measure*.5;
+        background-image: $custom-gradient;
+        transition: width .5s linear;
+        span{
+            text-decoration: underline;
+        }
+        &:hover{
+            background-image: $custom-gradient-reversed;
+            cursor: pointer;
+        }
+            
+    }
+    &:hover{
+        color: white;
+        background-image: $custom-gradient;
+        transform: scale(1.1);
+        .btn{
+            background-image: none;
+            color: steelblue;
+        }
+    }
+}
+
+//768px
+@media only screen and (min-width: 768px){
+    .card-wrapper{
+        display: flex;
+        justify-content: center;
+        width: 992px;
+        .card{
+            display: none;
+            &:nth-child(1){
+                display: initial;        
+            }
+            &:nth-child(3){
+                display: initial;
+            }
+        }
+    }
+}
+
+//992px
+
+@media only screen and (min-width: 992px){
+    body{
+        background-color: white;
+    }
+    .card-wrapper{
+        flex-direction: row-reverse;
+    }
+}    
+
+/*
+- a partir de 768px, sólo se vean la 1a y la 3er card
+- en desktop, el body debe tener fondo blanco
+- para tablet, las cards deberían aparecer de forma horizontal dentro del contenedor
+- en desktop, se debe de invertir el orden de las cards*/
