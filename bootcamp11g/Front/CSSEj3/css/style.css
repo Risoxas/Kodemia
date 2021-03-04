@@ -1,0 +1,199 @@
+*{
+    box-sizing: border-box;
+}
+
+.square-wrapper{
+    width:100%;
+    border:1px solid red;
+    padding:10px;
+    margin-bottom:10px;
+    height: 200px;
+}
+
+.square{
+    width:50px;
+}
+.pt-1{
+    padding-top:1rem
+}
+.pt-2{
+    padding-top:2rem
+}
+.pt-3{
+    padding-top:3rem
+}
+.pt-4{
+    padding-top:4rem
+}
+
+.pb-1{
+    padding-bottom:1rem
+}
+.pb-2{
+    padding-bottom:2rem
+}
+.pb-3{
+    padding-bottom:3rem
+}
+.pb-4{
+    padding-bottom:4rem
+}
+
+.center-by-margin{
+    margin-left: calc( 50% - 25px )
+}
+
+.ml-auto{
+    margin-left:auto;
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.d-inline-block{
+    display: inline-block;
+}
+
+/*--utilities for floating--*/
+.float-left{
+    float:left;
+}
+
+.float-right{
+    float:right;
+}
+
+/*--utilities for flex--*/
+
+.d-flex{
+    display:flex
+}
+
+.justify-flex-start{
+    justify-content: flex-start;
+}
+
+.justify-flex-end{
+    justify-content: flex-end;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.justify-evenly{
+    justify-content: space-evenly;
+}
+
+.align-start{
+    align-items: flex-start;
+}
+
+.align-end{
+    align-items: flex-end;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.align-stretch{
+    align-items: stretch;
+}
+
+.align-baseline{
+    align-items: baseline;
+}
+
+.layout-wrapper{
+    width:100vw;
+    height:100vh;
+    border: 2px solid #333;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.item {
+    width: 300px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    padding: 3% 1%;
+    border: 2px solid #333;
+  }
+  .rounded{
+      border-radius: 25px;
+  }
+  .img{
+      width: 5vw;
+      object-fit: contain;
+
+  }
+  .but-margin{
+      margin-top: 1rem;
+      width: 15vw;
+      height: 5vh;
+  }
+/*********************** colores **********************************/
+/**************    fondos *************************/
+.ming{
+    background-color: #16697a;
+}
+.PacificBlue{
+    background-color: #489FB5;
+}
+.MiddleBlue{
+    background: #82C0cc;
+}
+.BananaMania{
+    background-color: #F2DDA4;
+}
+.Flax{
+    background: #E3D985;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.bg-peru{
+    background-color: peru;
+}
+
+.bg-navy{
+    background-color: navy;
+}
+
+.bg-purple{
+    background-color: purple;
+}
+.behind{
+    z-index: -1;
+}
+.bg-pink{
+    background-color: deeppink;
+}
+.bg-black{
+    background-color: black;
+}
+.bgoff{
+    background-color: transparent;
+}
+
+/************************* textos *********************/
+.tx-white{
+    color: white;
+}
