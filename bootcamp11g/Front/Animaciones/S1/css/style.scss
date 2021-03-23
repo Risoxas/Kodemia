@@ -1,0 +1,40 @@
+@keyframes growing-line {
+    from {
+        width: 15vw;
+        border-color: peru;
+    }
+    to {
+        width: calc(100vw - 2rem);
+        border-color: navy;
+    }
+}
+
+@keyframes growing-line-fr {
+    0% {
+        width: 15vw;
+        border-color: peru;
+    }
+    50% {
+        width: calc(100vw - 2rem);
+        border-color: navy;
+    }
+    100%{
+        width: 15vw;
+        border-color: peru;
+    }
+}
+
+
+body{
+    padding: 1rem;
+}
+
+
+.simple-line{
+    border: 3px solid peru;
+    width: 15vw;
+    animation-name: growing-line-fr;
+    animation-duration: 8s;
+    animation-iteration-count: ;
+    animation-timing-function: linear;
+}

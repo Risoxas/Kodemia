@@ -1,0 +1,69 @@
+@-webkit-keyframes growing-line {
+  from {
+    width: 15vw;
+    border-color: peru;
+  }
+  to {
+    width: calc(100vw - 2rem);
+    border-color: navy;
+  }
+}
+
+@keyframes growing-line {
+  from {
+    width: 15vw;
+    border-color: peru;
+  }
+  to {
+    width: calc(100vw - 2rem);
+    border-color: navy;
+  }
+}
+
+@-webkit-keyframes growing-line-fr {
+  0% {
+    width: 15vw;
+    border-color: peru;
+  }
+  50% {
+    width: calc(100vw - 2rem);
+    border-color: navy;
+  }
+  100% {
+    width: 15vw;
+    border-color: peru;
+  }
+}
+
+@keyframes growing-line-fr {
+  0% {
+    width: 15vw;
+    border-color: peru;
+  }
+  50% {
+    width: calc(100vw - 2rem);
+    border-color: navy;
+  }
+  100% {
+    width: 15vw;
+    border-color: peru;
+  }
+}
+
+body {
+  padding: 1rem;
+}
+
+.simple-line {
+  border: 3px solid peru;
+  width: 15vw;
+  -webkit-animation-name: growing-line-fr;
+          animation-name: growing-line-fr;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+/*# sourceMappingURL=style.css.map */
