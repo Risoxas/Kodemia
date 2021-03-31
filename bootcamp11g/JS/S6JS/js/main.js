@@ -157,75 +157,6 @@ var Oscar = new Koder('Oscar', 'Ruiz', 1, '1996/06/24', 'Python', [{ module: 'Fr
 /***************** EJERCICIO  ****************************/
 
 
-const Productos = [
-    {
-        nombre: "Leche",
-        descripcion: "lacteo",
-        precioCosto: 12,
-        clasificacion: "bebida",
-        ganancia: .15,
-        precio6M: [
-            {
-                mes1: 11,
-                mes2: 10,
-                mes3: 9,
-                mes4: 8,
-                mes5: 7,
-                mes6: 6
-            }
-        ],
-        ventaU: 30,
-        fechaC: "2021/04/30"
-    },
-    {
-        nombre: "Manzana",
-        descripcion: "roja",
-        precioCosto: 7,
-        clasificacion: "fruta",
-        ganancia: .20,
-        precio6M: [
-            {
-                mes1: 7,
-                mes2: 7,
-                mes3: 6.5,
-                mes4: 6.2,
-                mes5: 6,
-                mes6: 6
-            }
-        ],
-        ventaU: 15,
-        fechaC: "2021/04/10"
-    },
-    {
-        nombre: "Mango",
-        descripcion: "petacon",
-        precioCosto: 10,
-        clasificacion: "fruta",
-        ganancia: .20,
-        precio6M: [
-            {
-                mes1: 10,
-                mes2: 10,
-                mes3: 9,
-                mes4: 9,
-                mes5: 8,
-                mes6: 7
-            }
-        ],
-        ventaU: 30,
-        fechaC: "2021/04/30"
-    },
-    {
-        nombre: "huevos",
-        descripcion: "blanco",
-        precioCosto: 8,
-        clasificacion: "alimento",
-        ganancia: .16,
-        precio6M: [8, 8, 8, 8, 8, 7],
-        ventaU: 100,
-        fechaC: "2021/04/23"
-    }
-]
 
 
 
@@ -243,19 +174,26 @@ function Producto(nombre, descripcion, precioCosto, categoria, ganancia, fechaC,
     this.getDays = function () {
         let today = new Date()
         let caducidad = new Date(this.fechaC)
-        console.log(caducidad)
         let mes = (caducidad.getMonth() - today.getMonth()) * 30
-        return restantes = caducidad.getDay() - today.getDay() + mes
+        return caducidad.getDate() - today.getDate() + mes
     }
     this.getPrecioPromedio = function () {
-        return (precio6M.reduce((accum, current) => accum + current, 0))/precio6M.length
+        return (precio6M.reduce((accum, current) => accum + current, 0)) / precio6M.length
     }
 
 }
 
-let huevos = new Producto('huevos', 'blanco', 8, 'alimento', .16, "2021/04/23", 100, [8, 8, 8, 8, 8, 7])
+const Productos = [leche = new Producto('Leche', 'lacteo', 12, 'bebida', .15, "2021/04/30", 30, [11, 10, 9, 8, 7, 6]),
+                   manzana = new Producto('Manzana', 'roja', 7, 'fruta', 320, '2021/04/10', 15, [7, 7, 6.5, 6.2, 6, 6]),
+                   huevos = new Producto('huevos', 'blanco', 8, 'alimento', .16, "2021/04/23", 100, [8, 8, 8, 8, 8, 7]),
+                   mango = new Producto('mango', 'petacon',10,'fruta',.20,'2021/04/30',30,[10,10,9,9,8,7])
+]
+
 
 const getProductsAbove = (cantidad) => Productos.filter(array => array.ventaU >= cantidad)
 
-console.log(getProductsAbove(50) )
+console.log(getProductsAbove(50))
 console.log(getProductsAbove(10))
+
+
+let proximosACaducar = Productos.filter(current => current.getDays() < 15)
