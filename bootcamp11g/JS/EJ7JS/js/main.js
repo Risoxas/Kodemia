@@ -1,5 +1,3 @@
-
-
 $("input[type='radio']").click(event => {
     $(`#element`).removeClass()
     switch (event.target.id) {
@@ -26,22 +24,22 @@ $("input[type='radio']").click(event => {
 var contador = 0
 $("button").click(event => {
     let imageArray = [
-        'https://picsum.photos/id/237/200/300',
-        'https://picsum.photos/id/238/200/300',
-        'https://picsum.photos/id/239/200/300',
-        'https://picsum.photos/id/236/200/300',
-        'https://picsum.photos/id/235/200/300'
+        'https://picsum.photos/id/237/500/300',
+        'https://picsum.photos/id/238/500/300',
+        'https://picsum.photos/id/239/500/300',
+        'https://picsum.photos/id/236/500/300',
+        'https://picsum.photos/id/235/500/300'
     ]
 
-    event.target.id === 'forward' ? contador += 1: contador -= 1
-    if(contador === imageArray.length - 1){
-        $('#forward').prop('disabled',true)
-    }else if(contador === 0){
-        $('#backward').prop('disabled',true)
-    }else{
-        $('#forward').prop('disabled',false)
-        $('#backward').prop('disabled',false)
+    event.target.id === 'forward' ? contador += 1 : contador -= 1
+    if (contador === imageArray.length - 1) {
+        $('#forward').prop('disabled', true)
+    } else if (contador === 0) {
+        $('#backward').prop('disabled', true)
+    } else {
+        $('#forward').prop('disabled', false)
+        $('#backward').prop('disabled', false)
     }
-    $("img").attr("src" , `${imageArray[contador]}`)
+    $("img").attr("src", `${imageArray[contador]}`)
 
 })
