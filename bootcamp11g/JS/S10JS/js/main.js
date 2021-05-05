@@ -1,8 +1,9 @@
-const getData = () => {
+/* GET */
+const getData = key => {
     let mentorsArray;
     $.ajax({
         method: "GET",
-        //url: base de datos,
+        url: "https://ajaxclass-1ca34.firebaseio.com/11g/david/mentors/${key}.json",
         success: response => {
             mentorsArray = response
         },
@@ -11,11 +12,12 @@ const getData = () => {
     return mentorsArray
 }
 
+/*UPDATE*/
 const saveNewMentor = mentorData => {
     $.ajax({
         method: "POST",
+        url: "https://ajaxclass-1ca34.firebaseio.com/11g/david/mentors/mentorsjson",
         data: JSON.stringify(mentorData),
-        //url: base de datos
         success: response => {
             console.log(response)
             printMentors(getMentors())
@@ -26,10 +28,11 @@ const saveNewMentor = mentorData => {
     })
 }
 
+/**DELETE */
 const deleteMentor = key => {
     $.ajax({
         method: "DELETE",
-        //url: base de datos
+        url: "https://ajaxclass-1ca34.firebaseio.com/11g/david/mentors/${key}.json",
         success: response => {
             console.log(response)
         },
@@ -39,8 +42,35 @@ const deleteMentor = key => {
     })
 }
 
+/**  PUT  */
 const putMentor = key => {
-    
+    $.ajax({
+        method: "PUT",
+        url: "https://ajaxclass-1ca34.firebaseio.com/11g/david/mentors/${key}.json",
+        data: JSON.stringify({mentorData}),
+        success: response => {
+            console.log(response)
+        },
+        error: error => {
+            console.log(error)
+        }
+    })
+}
+
+/**PATCH */
+
+const updateData =  key => {
+    $.ajax({
+        method: "PATCH",
+        url: "https://ajaxclass-1ca34.firebaseio.com/11g/david/mentors/${key}.json",
+        data: JSON.stringify(mentorData),
+        success: response => {
+            console.log(response)
+        },
+        error: error => {
+            console.log(error)
+        }
+    })
 }
 
 $("#save").click(() => {
@@ -48,11 +78,13 @@ $("#save").click(() => {
     $("form input").each(function () {
         let key = this.key
         let value = this.value
+        console.log(key,value)
 
         mentor[key] = value
+        console.log(mentor)
     })
 
-    saveNewMentor(mentor)
+    // saveNewMentor(mentor)
 })
 
 const printMentors = mentorsArray => {
