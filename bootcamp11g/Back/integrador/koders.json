@@ -1,0 +1,20 @@
+{
+    "koders" : [
+        {
+            "name" : "Beto",
+            "gender" : "m"
+        },{
+            "name" : "Walter",
+            "gender" : "m"
+        },{
+            "name" : "Mariana",
+            "gender" : "f"
+        },{
+            "name" : "Demian",
+            "gender": "m"
+        },{
+            "name" : "Silvi",
+            "gender" : "f"
+        }
+    ]
+}
