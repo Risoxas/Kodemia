@@ -1,26 +1,15 @@
 const express = require('express')
+const routerB = require('./routerB')
 
 const server = express()
 
-function middleware (request, response, next) {
-    console.log('middleware externo')
-    next()
-}
-
-server.use(middleware)
-
 server.use((request, response, next) => {
-    console.log('middleware a nivel de aplicacion')
-    next()
-}, (request, response, next) => {
-    console.log('middleware a nivel de aplicacion 2')
+    console.log('\nmiddleware a nivel de aplicacion')
     next()
 })
 
-server.use((request, response, next) => {
-    console.log('middleware a nivel de aplicacion 3')
-    next()
-})
+server.use('/b', routerB)
+
 
 server.get('/', (request, response, next) => {
     console.log('middleware a nivel de ruta')
