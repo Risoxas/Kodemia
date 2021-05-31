@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const server = require ('./src/server')
 const dbConnect = require('./src/lib/db')
 
@@ -13,8 +15,3 @@ dbConnect()
     .catch(error => {
         console.error('DB Connect Error: ', error)
     })
-
-    // GET /koders
-    // 1. crear (o asegurarse que exista) el Modelo necesario
-    // 2. crear el caso de uso necesario
-    // 3. crear el endpoint necesario

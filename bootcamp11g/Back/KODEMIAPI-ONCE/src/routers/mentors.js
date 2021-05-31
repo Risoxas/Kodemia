@@ -1,67 +1,64 @@
 const express = require('express')
-const koders = require('../usecases/koders')
-const authMiddlewares = require('../middlewares/auth')
-
 const router = express.Router()
+const mentors = require('../usecases/mentors')
 
-
-router.get('/', authMiddlewares.auth, async (request, response) => {
+router.get('/', async (request, response) => {
     try {
-        const allKoders = await koders.getAll()
+        const allMentors = await mentors.getAll()
 
         response.json({
             success: true,
-            message: 'All koders',
+            message: 'All mentors',
             data: {
-                koders: allKoders
+                mentors: allMentors
             }
         })
     } catch (error) {
         response.status(400)
         response.jason({
             success: false,
-            message: 'Error at get all koders',
+            message: 'Error at get all mentors',
             error: error.message
         })
     }
 })
 
-router.post('/',authMiddlewares.authRoles(['admin']), async (request, response) => {
+router.post('/', async (request, response) => {
     try {
-        const newKoder = await koders.postKoder(request.body)
+        const newMentor = await mentors.postMentor(request.body)
         response.json({
             success: true,
-            message: 'New koder added',
+            message: 'New mentor added',
             data: {
-                koder: newKoder
+                mentor: newMentor
             }
         })
     } catch (error) {
         response.status(400)
         response.json({
             success: false,
-            message: 'Error at create koders',
+            message: 'Error at create mentors',
             error: error.message
         })
     }
 })
 
-router.delete('/:id', authMiddlewares.authRoles(['admin']) ,async (request,response) => {
+router.delete('/:id', async (request,response) => {
     try{
         const { id } = request.params
-        const deletedKoder = await koders.deleteKoder(id)
+        const deletedMentor = await mentors.deleteMentor(id)
         response.json({
             succes: true,
-            message: 'Koder removed',
+            message: 'Mentor removed',
             data: {
-                koder: deletedKoder
+                mentor: deletedMentor
             }
         })
     } catch(error){
         response.status(400)
         response.json({
             success: false,
-            message: 'Error at delete koder',
+            message: 'Error at delete mentor',
             error: error.message
         })
     }
@@ -71,19 +68,19 @@ router.delete('/:id', authMiddlewares.authRoles(['admin']) ,async (request,respo
 router.patch('/:id', async (request, response) => {
     try {
         const { id } = request.params
-        const updatedKoder = await koders.updateById(id, request.body)
+        const updatedMentor = await mentors.updateById(id, request.body)
         response.json({
             succes: true,
-            message: 'Koder actualizado',
+            message: 'Mentor actualizado',
             data: {
-                koder: updatedKoder
+                mentor: updatedMentor
             }
         })
     } catch (error) {
         response.status(400)
         response.json({
             success: false,
-            message: 'Error at patch koder',
+            message: 'Error at patch mentor',
             error: error.message
         })
         

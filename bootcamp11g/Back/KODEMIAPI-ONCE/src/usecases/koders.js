@@ -5,16 +5,20 @@ function getAll() {
 }
 
 function postKoder(koder) {
-    console.log("en usecases", koder)
     return Koders.create(koder)
 }
 
-function deleteKoder(koderid) {
-    return Koders.findByIdAndDelete(koderid)
+function deleteKoder(id) {
+    return Koders.findByIdAndDelete(id)
+}
+
+function updateById (id, dataToUpdate){
+    return Koders.findByIdAndUpdate(id, dataToUpdate)
 }
 
 module.exports = {
     getAll,
     postKoder,
-    deleteKoder
+    deleteKoder,
+    updateById
 }
